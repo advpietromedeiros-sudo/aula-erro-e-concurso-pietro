@@ -14,7 +14,7 @@ button{font:inherit;cursor:pointer}
 .barra .nome{font-weight:800;margin-right:.4rem;white-space:nowrap}.barra .nome small{display:block;font-weight:500;color:#aebcd0;font-size:11px}
 .abas{display:flex;gap:.3rem}.aba{border:1px solid #34476a;background:#18294a;color:#dbe4f2;border-radius:9px;padding:.35rem .75rem;font-weight:800;font-size:14px}
 .aba.on{background:var(--ouro);border-color:var(--ouro);color:#13213a}
-.esp{flex:1}.cont{font-weight:800;color:#ffd67f;min-width:7.5rem;text-align:center;font-size:15px}
+.esp{flex:1}.bt.pdf{display:inline-flex;align-items:center;text-decoration:none;background:#c8202a;border-color:#c8202a;color:#fff;margin-left:.3rem}.bt.pdf:hover{filter:brightness(1.1)}@media print{.bt.pdf{display:none}}.cont{font-weight:800;color:#ffd67f;min-width:7.5rem;text-align:center;font-size:15px}
 .bt{border:1px solid #34476a;background:#18294a;color:#fff;border-radius:9px;min-width:42px;height:40px;padding:0 .65rem;font-weight:800;font-size:14px}
 .bt:hover,.bt:focus-visible{border-color:var(--ouro)}.bt.pri{background:var(--ouro);border-color:var(--ouro);color:#13213a}.bt.on{background:#2c6fd6;border-color:#2c6fd6}
 /* quadro */
@@ -123,6 +123,7 @@ body.caneta #tinta{pointer-events:auto;cursor:crosshair}
 <header class="barra">
  <div class="nome">Prof. Pietro Medeiros<small>Direito Penal · aula em quadro</small></div>
  <div class="abas" id="abas"></div>
+ <a class="bt pdf" id="bPdf" href="Estudo-do-Erro-e-Concurso-de-Crimes.pdf" download title="Baixar o PDF completo da aula: tudo aberto (resumo, perguntas respondidas, lei, exemplos e doutrina), pronto para imprimir">📄 PDF completo</a>
  <div class="esp"></div>
  <button class="bt" id="bAnt" title="Passo anterior (←)">←</button>
  <span class="cont" id="cont">0 / 0</span>
