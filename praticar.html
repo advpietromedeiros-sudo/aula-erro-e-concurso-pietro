@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Praticar — Erro e Concurso de Crimes (objetivas e discursivas guiadas)</title>
+<style>
+:root{
+  --tinta:#1b2430;--suave:#55637a;--linha:#e4e9f2;--bg:#eef2f8;--papel:#fff;
+  --roxo:#4b2e83;--roxo2:#6d4bb0;--roxo-claro:#efeaf8;
+  --verde:#15803d;--verde-bg:#e8f6ec;--verde-bd:#bfe3c9;
+  --vermelho:#c0241f;--vermelho-bg:#fcebe9;--vermelho-bd:#f1c7c3;
+  --ambar:#9a6400;--ambar-bg:#fff4e0;--ambar-bd:#ffdda8;
+  --azul:#13406b;--azul-bg:#eaf3ff;
+  --sombra:0 10px 32px rgba(18,24,48,.08);
+}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--tinta);background:var(--bg)}
+header{background:linear-gradient(135deg,#3a1d6e,#6d4bb0 75%);color:#fff;padding:22px 20px}
+.wrap{max-width:900px;margin:0 auto;padding:0 18px}
+header h1{margin:0;font-size:1.26em;display:flex;align-items:center;gap:9px}
+header p{margin:8px 0 0;opacity:.95;font-size:.92em;text-align:justify}
+main{max-width:900px;margin:0 auto;padding:18px}
+.card{background:var(--papel);border:1px solid var(--linha);border-radius:16px;padding:20px 22px;margin:16px 0;box-shadow:var(--sombra)}
+h2{font-size:1.16em;color:var(--roxo);margin:.1em 0 .5em}
+h3{font-size:1.02em;color:var(--roxo);margin:0 0 .3em}
+p{text-align:justify}
+.bt{background:#fff;border:1px solid #c9d2e0;color:var(--tinta);border-radius:11px;padding:11px 17px;min-height:44px;font:inherit;cursor:pointer;transition:.15s;display:inline-flex;align-items:center;gap:7px}
+.bt:hover{background:#f3f0fb;border-color:var(--roxo2)}
+.bt:active{transform:translateY(1px)}
+.bt.pri{background:var(--roxo2);color:#fff;border-color:var(--roxo2);font-weight:600}
+.bt.pri:hover{background:var(--roxo)}
+.bt:disabled{opacity:.45;cursor:default}
+.bt-lin{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;align-items:center}
+.menu{display:grid;gap:13px;grid-template-columns:1fr 1fr}
+@media(max-width:620px){.menu{grid-template-columns:1fr}}
+.qbtn{text-align:left;background:var(--papel);border:1px solid var(--linha);border-radius:14px;padding:16px;cursor:pointer;font:inherit;transition:.15s}
+.qbtn:hover{border-color:var(--roxo2);box-shadow:var(--sombra);transform:translateY(-1px)}
+.qbtn .kind{display:inline-block;font-size:.74em;font-weight:800;letter-spacing:.5px;border-radius:999px;padding:3px 10px;text-transform:uppercase}
+.kind.obj{background:var(--azul-bg);color:var(--azul)}
+.kind.sub{background:var(--roxo-claro);color:var(--roxo)}
+.qbtn .tt{font-weight:700;color:var(--roxo);margin-top:8px}
+.qbtn .meta{color:var(--suave);font-size:.86em;margin-top:2px}
+.selo{display:inline-block;font-size:.78em;border-radius:999px;padding:2px 10px;margin-top:8px}
+.selo.feito{background:var(--verde-bg);color:var(--verde)}
+.selo.pend{background:#eef2f8;color:var(--suave)}
+.tagline{color:var(--suave);font-size:.86em;margin-top:4px}
+.enun{background:#faf9fe;border:1px solid var(--linha);border-left:4px solid var(--roxo2);border-radius:12px;padding:14px 16px;text-align:justify;line-height:1.66}
+.enun .cmd{font-weight:700;color:var(--roxo)}
+.alts{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:9px}
+.alt{display:flex;gap:11px;align-items:flex-start;border:1px solid var(--linha);border-radius:11px;padding:11px 13px;cursor:pointer;background:#fff;transition:.12s;text-align:justify}
+.alt:hover{border-color:var(--roxo2);background:#faf8fe}
+.alt .l{font-weight:800;color:var(--roxo2);min-width:20px}
+.alt.sel{border-color:var(--roxo2);background:#f3eefb}
+.alt.cert{border-color:var(--verde);background:var(--verde-bg)}
+.alt.err{border-color:var(--vermelho);background:var(--vermelho-bg)}
+.alt .fx{margin-left:auto;font-size:.8em;font-weight:700;align-self:center}
+/* passo a passo */
+.passos{margin-top:16px;border:1px solid var(--linha);border-radius:14px;overflow:hidden}
+.passos .ph{background:#f3f0fb;border-bottom:1px solid var(--linha);padding:11px 15px;font-weight:700;color:var(--roxo);display:flex;align-items:center;gap:8px}
+.step{border-bottom:1px solid var(--linha);padding:0}
+.step:last-child{border-bottom:0}
+.step .sh{display:flex;gap:11px;align-items:center;padding:13px 15px;cursor:pointer;user-select:none}
+.step .sh:hover{background:#faf8fe}
+.step .n{width:26px;height:26px;border-radius:50%;background:var(--roxo-claro);color:var(--roxo);font-weight:800;font-size:.85em;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.step.on .n{background:var(--roxo2);color:#fff}
+.step .st{font-weight:600}
+.step .chev{margin-left:auto;color:var(--suave);transition:.2s}
+.step.on .chev{transform:rotate(90deg)}
+.step .sb{display:none;padding:0 15px 15px 52px;text-align:justify;line-height:1.66}
+.step.on .sb{display:block}
+.step .sb .lei{background:var(--azul-bg);border:1px solid #cfe2f6;border-radius:9px;padding:3px 9px;font-size:.85em;color:var(--azul);font-weight:700;display:inline-block;margin-top:6px}
+.peg{color:var(--vermelho);font-weight:700}
+.ok{color:var(--verde);font-weight:700}
+textarea,input[type=text]{width:100%;font:inherit;padding:10px 12px;border:1px solid #c9d2e0;border-radius:10px;line-height:1.55;resize:vertical;background:#fff}
+textarea:focus,input:focus{outline:2px solid var(--roxo2);border-color:var(--roxo2)}
+label.campo{display:block;margin:10px 0 4px;font-weight:600;font-size:.94em}
+.sug{display:flex;flex-wrap:wrap;gap:7px;margin:8px 0}
+.sug button{font:inherit;font-size:.86em;background:#f3f0fb;border:1px solid #dfd5f3;color:var(--roxo);border-radius:999px;padding:5px 11px;cursor:pointer}
+.sug button:hover{background:var(--roxo2);color:#fff}
+.box{background:#faf9fe;border:1px solid var(--linha);border-radius:12px;padding:14px 16px;margin-top:12px}
+.resp-final{background:#f4fbf6;border:1px solid var(--verde-bd);border-radius:12px;padding:16px;white-space:pre-wrap;text-align:justify;line-height:1.7}
+.rubrica{width:100%;border-collapse:collapse;margin-top:8px}
+.rubrica td,.rubrica th{border-bottom:1px solid var(--linha);padding:8px 10px;text-align:left;vertical-align:top;font-size:.93em}
+.rubrica th{background:#f3f0fb;color:var(--roxo)}
+.chip{display:inline-block;background:var(--roxo-claro);color:var(--roxo);border-radius:999px;padding:2px 10px;font-size:.8em;font-weight:700;margin:2px 4px 0 0}
+details.base{margin-top:10px}
+details.base summary{cursor:pointer;font-weight:700;color:var(--roxo)}
+.prog{height:8px;background:#e9e3f6;border-radius:999px;overflow:hidden;margin-top:8px}
+.prog>i{display:block;height:100%;background:linear-gradient(90deg,var(--roxo2),#8a62d6)}
+footer{max-width:900px;margin:8px auto 44px;padding:0 20px;color:#73819a;font-size:.82em;text-align:justify}
+small.dim{color:var(--suave)}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <h1>🧭 Praticar: Erro e Concurso de Crimes</h1>
+  <p>Treino guiado a partir da aula <b>“Estudo do Erro e Concurso de Crimes”</b> (Prof. Pietro Medeiros). Em cada questão, um <b>passo a passo</b> ensina a <b>lógica de resolver</b>: nas <b>objetivas</b>, a técnica de leitura e eliminação; nas <b>discursivas</b>, você <b>escreve junto</b> (método P.A.R.E. + TP3EF) e, ao final, monta a sua resposta.</p>
+</div></header>
+<main id="tela"></main>
+<footer id="rodape"></footer>
+
+<script>
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const CHAVE='praticar-erro:v1';
+let st={obj:{},sub:{}};try{st=Object.assign(st,JSON.parse(localStorage.getItem(CHAVE)||'{}'))}catch(e){}
+const salvar=()=>{try{localStorage.setItem(CHAVE,JSON.stringify(st))}catch(e){}};
+
+/* ================= CONTEÚDO ================= */
+const OBJ=[
+{ id:'o1', tema:'Erro — descriminante putativa',
+  enunciado:'Durante a madrugada, João é despertado por barulhos e vê um vulto saltando o muro dos fundos de sua casa. Convencido de que se trata de um assaltante prestes a atacá-lo, apanha sua arma e dispara, ferindo o invasor. Depois se apura que era um vizinho embriagado, que pulara o muro por engano, sem qualquer intenção de agredir. <span class="cmd">Assinale a alternativa correta.</span>',
+  alts:[
+   {l:'A',t:'João agiu em legítima defesa real e não responde por crime algum, pois repeliu injusta agressão atual.'},
+   {l:'B',t:'Trata-se de descriminante putativa: João supôs uma situação de fato (a agressão) que, se existisse, tornaria a ação legítima — é erro de tipo permissivo (art. 20, § 1º); se o erro era evitável, responde por crime culposo.'},
+   {l:'C',t:'Houve erro de proibição direto (art. 21), pois João desconhecia que matar em legítima defesa putativa é proibido.'},
+   {l:'D',t:'Houve erro sobre a pessoa (art. 20, § 3º), devendo João responder como se tivesse atingido a vítima que pretendia.'},
+   {l:'E',t:'Houve aberratio ictus (erro na execução, art. 73), pois João, por acidente, atingiu pessoa diversa da pretendida.'},
+  ],
+  gab:'B',
+  passos:[
+   {t:'1. Leia o comando: o que a questão pede?',d:'O enunciado termina com “assinale a alternativa <b>correta</b>”. Logo, quatro alternativas estão <b>erradas</b> e só uma certa. <span class="peg">Marque mentalmente a ordem (correta/incorreta)</span> — trocar isso é o erro nº 1 em prova.'},
+   {t:'2. Grife os fatos e classifique o instituto',d:'Fatos-chave: João <b>imagina</b> uma agressão que <b>não existe</b> e reage. O instituto em jogo é a <b>descriminante putativa</b> (legítima defesa “de mentira”). A aula ensina: <b>erro sobre pressupostos de FATO</b> da justificante → art. 20, § 1º (erro de tipo permissivo).<span class="lei">CP, art. 20, § 1º</span>'},
+   {t:'3. Formule a tese ANTES de ver as alternativas',d:'Responda de cabeça: “É legítima defesa putativa; como o erro é sobre a <b>situação de fato</b>, aplica-se o art. 20, § 1º; se o erro era <b>evitável</b>, responde por crime <b>culposo</b>.” Com a tese pronta, você não se deixa levar pela “casca” das alternativas.'},
+   {t:'4. Elimine por erro — um erro já derruba a alternativa',d:'<b>A</b> erra: a legítima defesa <b>real</b> exige agressão que <b>exista de fato</b>; aqui ela só existia na cabeça de João (é <b>putativa</b>, não real). <b>C</b> erra: não é erro sobre a <b>proibição</b> da norma (art. 21), e sim sobre os <b>fatos</b>. <b>D</b> e <b>E</b> erram: <span class="peg">erro sobre a pessoa</span> (§ 3º) e <span class="peg">aberratio ictus</span> (art. 73) pressupõem que a agressão/alvo <b>existisse</b> e houvesse troca de pessoa — não é o caso.'},
+   {t:'5. Use a lógica das alternativas',d:'Veja que <b>C, D e E</b> rotulam o mesmo fato com <b>institutos diferentes e incompatíveis</b> entre si: quando a banca enfileira vários “nomes” para o mesmo caso, quase sempre o certo é o que se encaixa na <b>definição legal exata</b> — e só a <b>B</b> descreve com precisão o art. 20, § 1º.'},
+   {t:'6. Confirme e marque',d:'A <b>B</b> sobrevive a todos os testes: nomeia certo (descriminante putativa = erro de tipo permissivo), cita o dispositivo certo (art. 20, § 1º) e traz a consequência certa (culposo se evitável). <span class="ok">Resposta: B.</span>'},
+  ],
+  coment:{
+   A:'Errado. A legítima defesa do art. 25 é <b>real</b> — exige agressão injusta <b>efetivamente existente</b>. Como a agressão só existia na imaginação de João, fala-se em legítima defesa <b>putativa</b>, que não exclui o crime do mesmo modo.',
+   B:'Correto. É a <b>descriminante putativa por erro sobre pressupostos de fato</b>: o agente supõe uma situação que, se real, tornaria a conduta legítima. O art. 20, § 1º, trata como <b>erro de tipo permissivo</b> — isenta de pena se inevitável; se evitável, responde por crime <b>culposo</b> (teoria limitada da culpabilidade).',
+   C:'Errado. Erro de proibição direto (art. 21) é achar <b>permitida</b> uma conduta <b>proibida</b> pela norma. João não erra sobre a norma; erra sobre os <b>fatos</b> (achou que havia agressão).',
+   D:'Errado. Erro sobre a pessoa (art. 20, § 3º) ocorre quando o agente <b>confunde a vítima</b> (mata B achando que é A). Não há aqui troca de identidade da vítima.',
+   E:'Errado. Aberratio ictus (art. 73) é o <b>erro na execução</b>: mira em A e, por desvio do golpe, atinge B. Não é o caso: João atingiu exatamente quem mirou; o erro foi sobre a <b>existência da agressão</b>.',
+  },
+  licao:'Gatilho de prova: “supõe situação de FATO” → art. 20, § 1º (erro de tipo permissivo); “supõe estar AUTORIZADO / achar que pode ir além” → art. 21 (erro de proibição indireto). Memorize o par fato × permissão.'
+},
+{ id:'o2', tema:'Concurso de crimes — formal impróprio',
+  enunciado:'Pretendendo matar seu patrão, o motorista instala um explosivo no automóvel. Ao acionar a bomba, mata o patrão e também o segurança que o acompanhava — morte que o agente havia <b>previsto e aceitado</b> como consequência do atentado. <span class="cmd">Sobre o concurso de crimes, assinale a alternativa correta.</span>',
+  alts:[
+   {l:'A',t:'Concurso material (art. 69): como há dois homicídios, há duas condutas, e as penas somam-se.'},
+   {l:'B',t:'Concurso formal próprio (art. 70, 1ª parte): uma só conduta gerou dois resultados, aplicando-se a pena de um só crime aumentada de 1/6 a 1/2.'},
+   {l:'C',t:'Concurso formal impróprio (art. 70, 2ª parte): uma única conduta dolosa com desígnios autônomos quanto a cada morte, somando-se as penas (cúmulo material).'},
+   {l:'D',t:'Crime continuado (art. 71): crimes da mesma espécie, nas mesmas condições, com aumento de 1/6 a 2/3.'},
+   {l:'E',t:'Crime único, pois uma só explosão não pode gerar mais de um homicídio.'},
+  ],
+  gab:'C',
+  passos:[
+   {t:'1. Leia o comando: o que se pede?',d:'“Assinale a <b>correta</b>” sobre o <b>concurso de crimes</b>. O foco não é a tipificação, e sim <b>qual concurso</b> e <b>qual sistema de pena</b> (soma ou exasperação).'},
+   {t:'2. Aplique o “roteiro de 4 perguntas” da aula',d:'(1) Há mais de um crime? <b>Sim</b> (duas mortes). (2) <b>Quantas condutas?</b> <b>Uma só</b> (uma explosão) → vai para o <b>art. 70</b>. (3) A conduta é <b>dolosa com desígnios autônomos</b> (quis/aceitou cada morte)? <span class="peg">Sim</span>. (4) Logo: <b>art. 70, 2ª parte</b> — formal <b>impróprio</b>.<span class="lei">CP, art. 70</span>'},
+   {t:'3. Entenda o divisor: desígnios autônomos',d:'<b>Formal próprio</b> = uma conduta, resultados <b>sem</b> vontade dirigida a cada um (ex.: culpa) → <b>exasperação</b> (favor ao réu). <b>Formal impróprio</b> = uma conduta <b>dolosa</b> com <b>desígnios autônomos</b> (quis os dois resultados) → a lei <b>retira o favor</b> e manda <b>somar</b> (cúmulo material).'},
+   {t:'4. Elimine por erro',d:'<b>A</b> erra: a bomba é <b>uma</b> conduta, não duas (o nº de condutas não se mede pelo nº de mortes). <b>B</b> erra: houve <b>dolo</b> quanto às duas mortes (previu e aceitou a do segurança = dolo eventual), então não é “próprio” com exasperação. <b>D</b> erra: não há pluralidade de condutas nem continuidade. <b>E</b> erra: uma conduta <b>pode</b> gerar vários crimes (é a essência do concurso formal).'},
+   {t:'5. Confirme o sistema de pena',d:'No formal <b>impróprio</b>, as penas <b>se somam</b> — e, como no concurso material, vale o <b>concurso material benéfico</b> (art. 70, p.ú.): a conta nunca pode superar a simples soma. <span class="ok">Resposta: C.</span>'},
+  ],
+  coment:{
+   A:'Errado. <b>Uma</b> explosão é <b>uma</b> conduta. O número de condutas não se conta pelo número de resultados; por isso não é concurso material (que exige pluralidade de condutas).',
+   B:'Errado. O formal <b>próprio</b> (exasperação) pressupõe ausência de desígnios autônomos (tipicamente, resultados <b>culposos</b>). Aqui o agente <b>previu e aceitou</b> a segunda morte (dolo eventual): há desígnios autônomos.',
+   C:'Correto. Uma conduta, dois resultados <b>queridos/aceitos</b> (desígnios autônomos) = concurso formal <b>impróprio</b> (art. 70, 2ª parte). A lei afasta a exasperação e manda <b>somar</b> as penas, como no concurso material.',
+   D:'Errado. Crime continuado (art. 71) exige <b>pluralidade de condutas</b> da mesma espécie em condições semelhantes. Há uma só conduta.',
+   E:'Errado. Uma única conduta pode produzir <b>vários crimes</b> — é exatamente o que define o concurso formal.',
+  },
+  licao:'Regra de ouro (art. 70): conte as CONDUTAS, não os resultados. Uma conduta → formal. Se dolosa e com desígnios autônomos → impróprio (soma); senão → próprio (exasperação 1/6 a 1/2). Teto sempre na soma (art. 70, p.ú.).'
+}
+];
+
+const SUB=[
+{ id:'s1', tema:'Erro — discursiva conceitual', valor:'20 pontos · 15 a 25 linhas',
+  enunciado:'<span class="cmd">Disserte</span> sobre a distinção entre <b>erro de tipo</b> e <b>erro de proibição</b>, indicando os <b>efeitos</b> de cada um e explicando a disciplina das <b>descriminantes putativas</b> no Código Penal.',
+  P:{guia:'Reescreva o comando como uma PERGUNTA clara e circule os verbos de comando. O que exatamente a banca manda fazer?',
+     dica:'Verbos: “distinguir”, “indicar os efeitos”, “explicar as descriminantes putativas”. São TRÊS entregas — responder só a primeira perde pontos de pertinência.',
+     placeholder:'Ex.: Qual a diferença entre erro de tipo e erro de proibição, que efeito cada um produz e como o CP trata a legítima defesa putativa?'},
+  A:{guia:'Anote (brainstorm) os conceitos, artigos e exemplos que você usará. Clique nas sugestões para inserir e complete com o que lembrar.',
+     sugestoes:[
+       'Erro de tipo (art. 20): recai sobre elemento do tipo; exclui o dolo.',
+       'Se evitável, pune-se a culpa (quando houver tipo culposo).',
+       'Erro de proibição (art. 21): recai sobre a ilicitude; não exclui o dolo.',
+       'Inevitável isenta de pena; evitável reduz de 1/6 a 1/3.',
+       'Descriminante putativa sobre pressupostos de FATO → art. 20, §1º (erro de tipo permissivo).',
+       'Sobre existência/limites da justificante → erro de proibição indireto (art. 21).',
+       'Teoria limitada da culpabilidade; Exposição de Motivos da Parte Geral.',
+       'Ex.: caçador atira no vulto achando ser javali (erro de tipo).',
+     ],
+     placeholder:'Cole/liste aqui seus conceitos, artigos e exemplos…'},
+  R:{guia:'Monte o ROTEIRO: defina a TESE (resposta-síntese) e os 2–3 tópicos frasais (a ideia central de cada parágrafo).',
+     tese_ph:'Tese: erro de tipo e erro de proibição distinguem-se pelo OBJETO do erro (o fato × a ilicitude), com efeitos distintos sobre dolo e culpabilidade; as descriminantes putativas situam-se nessa fronteira.',
+     topicos:['Tópico 1 — Erro de tipo (art. 20): objeto e efeito (exclui o dolo; culpa se evitável).',
+              'Tópico 2 — Erro de proibição (art. 21): objeto e efeito (não exclui o dolo; isenção/redução na culpabilidade).',
+              'Tópico 3 — Descriminantes putativas: fato (§1º) × existência/limites (art. 21).']},
+  E:{guia:'ESCREVA cada parágrafo no modelo TP3EF: Tópico frasal + provas (artigos/exemplos) + fecho. Use conectivos.',
+     paragrafos:[
+       {nome:'Parágrafo 1 — Erro de tipo',ph:'Tópico frasal + art. 20 + efeito (exclui dolo; culpa se evitável) + exemplo…'},
+       {nome:'Parágrafo 2 — Erro de proibição',ph:'Tópico frasal + art. 21 + efeito (isenta/reduz na culpabilidade) + exemplo…'},
+       {nome:'Parágrafo 3 — Descriminantes putativas',ph:'Fato → art. 20, §1º; existência/limites → art. 21; fecho retomando a tese…'},
+     ]},
+  espelho:[
+   'O erro de tipo e o erro de proibição distinguem-se, fundamentalmente, pelo OBJETO sobre o qual o agente se equivoca. No erro de tipo (CP, art. 20), o erro recai sobre um elemento constitutivo do tipo — o agente não sabe o que faz. Como o dolo é a consciência e a vontade de realizar todos os elementos do tipo, o erro de tipo EXCLUI O DOLO; se inevitável, afasta também a culpa; se evitável, subsiste a punição a título culposo, quando houver previsão legal (art. 20, caput).',
+   'Já o erro de proibição (CP, art. 21) recai sobre a ilicitude do fato: o agente sabe o que faz, mas acredita que a conduta é permitida. Por isso NÃO exclui o dolo, que permanece no tipo; atua no plano da culpabilidade, na potencial consciência da ilicitude. Se inevitável, isenta de pena; se evitável, a pena é reduzida de um sexto a um terço. O desconhecimento da lei é inescusável, mas o erro sobre a ilicitude pode escusar.',
+   'As descriminantes putativas situam-se na fronteira entre os dois institutos. Quando o agente supõe uma situação de FATO que, se existisse, tornaria legítima a ação (ex.: a legítima defesa putativa de quem atira no “ladrão” imaginário), há erro sobre pressupostos fáticos, tratado como erro de tipo permissivo (art. 20, § 1º): isenta de pena se inevitável e, se evitável, enseja punição por crime culposo. Quando, porém, o erro recai sobre a EXISTÊNCIA ou os LIMITES da justificante (o agente acredita estar autorizado a ir além), há erro de proibição indireto (art. 21). Essa é a solução da teoria limitada da culpabilidade, adotada pelo Código.',
+  ],
+  rubrica:[
+   ['Pertinência','Respondeu às TRÊS entregas: distinção, efeitos e descriminantes putativas?'],
+   ['Domínio','Citou corretamente art. 20 e art. 21 (e o § 1º) e usou a terminologia (dolo, culpabilidade, erro permissivo)?'],
+   ['Argumentação','Ligou o erro de tipo ao dolo e o erro de proibição à culpabilidade, com exemplos?'],
+   ['Estrutura','Tese clara, um parágrafo por ideia (TP3EF) e fecho que retoma a distinção?'],
+   ['Linguagem','Registro formal, conectivos adequados, sem erros de concordância/crase?'],
+  ]
+},
+{ id:'s2', tema:'Concurso — estudo de caso', valor:'20 pontos · 15 a 25 linhas',
+  enunciado:'Dirigindo com imprudência, Tício perde o controle do veículo e, num único atropelamento, causa a morte de duas pessoas. No mesmo dia, horas depois e já a pé, subtrai um celular exposto numa banca. <span class="cmd">Analise, de forma fundamentada, o concurso de crimes aplicável a cada situação e o respectivo sistema de aplicação da pena.</span>',
+  P:{guia:'Reescreva o comando como pergunta e identifique o que deve ser enfrentado. Há duas situações distintas a classificar.',
+     dica:'O comando é COMPOSTO: (1) classificar o concurso em cada situação e (2) indicar o sistema de pena de cada uma. Não esqueça de relacioná-las ao final.',
+     placeholder:'Ex.: Qual o concurso de crimes nas duas mortes por um só atropelamento culposo? E entre esse fato e o furto posterior? Qual o sistema de pena de cada um?'},
+  A:{guia:'Anote os institutos e artigos pertinentes. Clique para inserir as sugestões e acrescente o que lembrar.',
+     sugestoes:[
+       'Uma conduta culposa, dois resultados → concurso formal próprio (art. 70, 1ª parte).',
+       'Formal próprio: exasperação da pena de um crime de 1/6 a 1/2.',
+       'Furto é conduta autônoma e crime diverso → concurso material (art. 69).',
+       'Concurso material: as penas se somam (cúmulo material).',
+       'Concurso material benéfico (art. 70, p.ú.): a exasperação nunca supera a soma.',
+       'Homogêneo (crimes iguais) × heterogêneo (crimes diferentes).',
+     ],
+     placeholder:'Liste aqui os institutos, artigos e a lógica…'},
+  R:{guia:'Roteiro: fixe a TESE e os tópicos frasais (uma situação por parágrafo).',
+     tese_ph:'Tese: há dois regimes de concurso — formal próprio nas duas mortes (uma conduta culposa) e material entre esse fato e o furto (condutas autônomas).',
+     topicos:['Tópico 1 — As duas mortes: uma conduta culposa, dois resultados → formal próprio (art. 70, 1ª parte), exasperação.',
+              'Tópico 2 — O furto: conduta autônoma e diversa → concurso material (art. 69), soma.',
+              'Tópico 3 — Regra de controle: concurso material benéfico (art. 70, p.ú.).']},
+  E:{guia:'Escreva cada parágrafo em TP3EF (tópico frasal + fundamento legal + fecho).',
+     paragrafos:[
+       {nome:'Parágrafo 1 — As duas mortes',ph:'Uma só conduta (o atropelamento) e dois resultados culposos → art. 70, 1ª parte; exasperação de 1/6 a 1/2…'},
+       {nome:'Parágrafo 2 — O furto',ph:'Conduta nova e autônoma, crime diverso → concurso material (art. 69); penas somadas…'},
+       {nome:'Parágrafo 3 — Controle e conclusão',ph:'Concurso material benéfico (art. 70, p.ú.): a exasperação não pode superar a soma; fecho…'},
+     ]},
+  espelho:[
+   'A primeira situação configura concurso formal PRÓPRIO (ou perfeito). Com uma ÚNICA conduta — o atropelamento imprudente —, Tício produziu dois resultados (duas mortes), ambos a título CULPOSO, sem desígnios autônomos. Incide o art. 70, 1ª parte, do Código Penal, aplicando-se a pena de um só dos crimes, aumentada de um sexto até metade (sistema da exasperação). A razão de ser do instituto é benéfica: a unidade de conduta revela menor reprovabilidade do que a prática de crimes por condutas independentes.',
+   'A segunda situação, o furto do celular, decorre de conduta NOVA e autônoma, distinta e separada no tempo, configurando crime de espécie diversa. Entre esse furto e os homicídios culposos há concurso MATERIAL (art. 69), de natureza heterogênea (crimes diferentes). O sistema aplicável é o do cúmulo material: as penas dos crimes são somadas.',
+   'Por fim, impõe-se a regra de controle do concurso material benéfico (art. 70, parágrafo único): a pena resultante da exasperação, no concurso formal, nunca poderá exceder aquela que decorreria da simples soma (cúmulo material). Assim, no caso, apura-se a pena do concurso formal das duas mortes, soma-se à pena do furto (concurso material) e verifica-se se o total respeita o teto do cúmulo, garantindo a solução mais favorável ao réu.',
+  ],
+  rubrica:[
+   ['Pertinência','Classificou as DUAS situações e indicou o sistema de pena de cada uma?'],
+   ['Domínio','Citou art. 70 (1ª parte) e art. 69, e lembrou o art. 70, p.ú. (concurso material benéfico)?'],
+   ['Argumentação','Justificou pelo nº de condutas e pela ausência de desígnios autônomos (culpa)?'],
+   ['Estrutura','Uma situação por parágrafo, tese e fecho integrando as duas?'],
+   ['Linguagem','Formal, técnica e coesa, sem desvios?'],
+  ]
+}
+];
+
+/* ================= NAVEGAÇÃO ================= */
+function home(){
+ const feitoObj=OBJ.filter(q=>st.obj[q.id]&&st.obj[q.id].done).length;
+ const feitoSub=SUB.filter(q=>st.sub[q.id]&&st.sub[q.id].done).length;
+ const cardObj=OBJ.map((q,i)=>`<button class="qbtn" data-obj="${i}"><span class="kind obj">Objetiva</span>
+   <div class="tt">${esc(q.tema)}</div><div class="meta">Múltipla escolha + passo a passo de resolução</div>
+   <span class="selo ${st.obj[q.id]&&st.obj[q.id].done?'feito':'pend'}">${st.obj[q.id]&&st.obj[q.id].done?'✔️ respondida':'a fazer'}</span></button>`).join('');
+ const cardSub=SUB.map((q,i)=>`<button class="qbtn" data-sub="${i}"><span class="kind sub">Discursiva</span>
+   <div class="tt">${esc(q.tema)}</div><div class="meta">Escreva junto (P.A.R.E. + TP3EF) e monte a resposta</div>
+   <span class="selo ${st.sub[q.id]&&st.sub[q.id].done?'feito':'pend'}">${st.sub[q.id]&&st.sub[q.id].done?'✔️ montada':'a fazer'}</span></button>`).join('');
+ $('tela').innerHTML=`<div class="card">
+   <h2>Antes de começar</h2>
+   <p>Este treino usa o conteúdo da aula de <b>Erro e Concurso de Crimes</b>. A ideia não é só acertar, mas <b>aprender a lógica</b> de responder. Faça na ordem: primeiro as objetivas (técnica de leitura e eliminação), depois as discursivas (construção do texto, passo a passo).</p>
+   <details class="base"><summary>📚 Relembrar os conceitos-chave (resumo)</summary>
+     <div class="box"><p><b>Erro de tipo (art. 20):</b> recai sobre elemento do tipo; o agente <b>não sabe o que faz</b>. Exclui o dolo; se evitável, pune a culpa.</p>
+     <p><b>Erro de proibição (art. 21):</b> o agente <b>sabe o que faz, mas acha que é permitido</b>. Não exclui o dolo; inevitável isenta, evitável reduz de 1/6 a 1/3.</p>
+     <p><b>Descriminantes putativas:</b> erro sobre pressupostos de <b>fato</b> → art. 20, § 1º (erro de tipo permissivo); sobre <b>existência/limites</b> da justificante → art. 21 (erro de proibição indireto).</p>
+     <p><b>Concurso de crimes:</b> conte as <b>condutas</b>. Uma conduta → <b>formal</b> (art. 70): próprio = exasperação 1/6 a 1/2; impróprio = dolo com desígnios autônomos → soma. Várias condutas → <b>material</b> (art. 69, soma) ou <b>continuado</b> (art. 71, mesma espécie e condições, exasperação 1/6 a 2/3). Teto sempre na soma (art. 70, p.ú.).</p></div>
+   </details></div>
+   <div class="card"><h2>🅰️ Questões objetivas</h2><div class="menu">${cardObj}</div></div>
+   <div class="card"><h2>✍️ Questões discursivas</h2><div class="menu">${cardSub}</div></div>`;
+}
+
+/* ---------- OBJETIVA ---------- */
+function abrirObj(i){
+ const q=OBJ[i]; const sv=st.obj[q.id]||{aberto:[],marcou:null,done:false};
+ st.obj[q.id]=sv;
+ const respondido=!!sv.done;
+ const alts=q.alts.map(a=>{
+   let cls='alt';
+   if(respondido){ if(a.l===q.gab)cls+=' cert'; else if(a.l===sv.marcou)cls+=' err'; }
+   else if(sv.marcou===a.l)cls+=' sel';
+   const fx=respondido?(a.l===q.gab?'<span class="fx" style="color:var(--verde)">✔️ correta</span>':(a.l===sv.marcou?'<span class="fx" style="color:var(--vermelho)">✖️ sua marca</span>':'')):'';
+   return `<li class="${cls}" data-alt="${a.l}"><span class="l">${a.l}</span><span>${a.t}</span>${fx}</li>`;
+ }).join('');
+ const passos=q.passos.map((p,k)=>`<div class="step ${sv.aberto.includes(k)?'on':''}" data-step="${k}">
+    <div class="sh"><span class="n">${k+1}</span><span class="st">${p.t.replace(/^\d+\.\s*/,'')}</span><span class="chev">▸</span></div>
+    <div class="sb">${p.d}</div></div>`).join('');
+ const comentHTML=respondido?`<div class="box"><h3>Comentário de cada alternativa</h3>
+   ${q.alts.map(a=>`<p><b>${a.l})</b> ${q.coment[a.l]}</p>`).join('')}
+   <p class="chip">💡 Lição</p><p>${q.licao}</p></div>`:'';
+ $('tela').innerHTML=`<div class="card">
+   <div class="bt-lin" style="margin-top:0"><button class="bt" data-home="1">← Voltar</button><span class="tagline" style="margin-left:auto">Objetiva · ${esc(q.tema)}</span></div>
+   <div class="enun" style="margin-top:12px">${q.enunciado}</div>
+   <ul class="alts">${alts}</ul>
+   <div class="passos"><div class="ph">🧭 Passo a passo — como resolver esta objetiva</div>${passos}</div>
+   <div class="bt-lin"><button class="bt pri" data-ver="1" ${respondido?'disabled':''}>Ver gabarito e comentários</button>${respondido?'<button class="bt" data-home="1">Concluir</button>':''}</div>
+   <div id="comentbox">${comentHTML}</div></div>`;
+}
+function verGabaritoObj(i){
+ const q=OBJ[i]; const sv=st.obj[q.id];
+ if(sv.marcou==null)sv.marcou=q.gab; // se não marcou, considera leitura
+ sv.done=true; salvar(); abrirObj(i);
+}
+
+/* ---------- DISCURSIVA ---------- */
+function abrirSub(i){
+ const q=SUB[i]; const sv=st.sub[q.id]||{campos:{},done:false,etapa:0};
+ st.sub[q.id]=sv; const c=sv.campos;
+ const topicosR=q.R.topicos.map((t,k)=>`<label class="campo">${esc(t)}</label><input type="text" data-campo="r_top_${k}" value="${esc(c['r_top_'+k]||'')}">`).join('');
+ const parasE=q.E.paragrafos.map((p,k)=>`<label class="campo">${esc(p.nome)}</label><textarea rows="4" data-campo="e_${k}" placeholder="${esc(p.ph)}">${esc(c['e_'+k]||'')}</textarea>`).join('');
+ const sugA=q.A.sugestoes.map(s=>`<button data-sugA="${esc(s)}">+ ${esc(s.slice(0,42))}…</button>`).join('');
+ $('tela').innerHTML=`<div class="card">
+   <div class="bt-lin" style="margin-top:0"><button class="bt" data-home="1">← Voltar</button><span class="tagline" style="margin-left:auto">Discursiva · ${esc(q.tema)} · ${esc(q.valor)}</span></div>
+   <div class="enun" style="margin-top:12px">${q.enunciado}</div>
+   <div class="passos" style="margin-top:14px"><div class="ph">✍️ Escreva junto — método P.A.R.E. + TP3EF</div>
+
+    <div class="step on" data-fix><div class="sh"><span class="n">P</span><span class="st">Pergunta — entenda o comando</span></div>
+      <div class="sb"><p>${q.P.guia}</p><p class="box"><b>Dica:</b> ${q.P.dica}</p>
+        <label class="campo">Reescreva o comando como pergunta</label>
+        <textarea rows="2" data-campo="p" placeholder="${esc(q.P.placeholder)}">${esc(c.p||'')}</textarea></div></div>
+
+    <div class="step on" data-fix><div class="sh"><span class="n">A</span><span class="st">Anote — levante a matéria</span></div>
+      <div class="sb"><p>${q.A.guia}</p><div class="sug">${sugA}</div>
+        <textarea rows="5" data-campo="a" placeholder="${esc(q.A.placeholder)}">${esc(c.a||'')}</textarea></div></div>
+
+    <div class="step on" data-fix><div class="sh"><span class="n">R</span><span class="st">Roteiro — tese e tópicos</span></div>
+      <div class="sb"><p>${q.R.guia}</p>
+        <label class="campo">Tese central</label><textarea rows="2" data-campo="r_tese" placeholder="${esc(q.R.tese_ph)}">${esc(c.r_tese||'')}</textarea>
+        ${topicosR}</div></div>
+
+    <div class="step on" data-fix><div class="sh"><span class="n">E</span><span class="st">Escreva — parágrafos em TP3EF</span></div>
+      <div class="sb"><p>${q.E.guia}</p>${parasE}
+      <p class="tagline" style="margin-top:8px">Conectivos úteis: <i>além disso, uma vez que, portanto, por outro lado, dessa forma, com efeito</i>.</p></div></div>
+   </div>
+   <div class="bt-lin"><button class="bt pri" data-montar="1">🧩 Montar a minha resposta</button><button class="bt" data-home="1">Salvar e sair</button></div>
+   <div id="montada"></div></div>`;
+ if(sv.done)montarSub(i);
+}
+function montarSub(i){
+ const q=SUB[i]; const sv=st.sub[q.id]; const c=sv.campos;
+ const partes=[c.r_tese, ...q.E.paragrafos.map((p,k)=>c['e_'+k])].map(x=>(x||'').trim()).filter(Boolean);
+ const minha=partes.length?partes.join('\n\n'):'(Você ainda não escreveu os parágrafos no passo E. Preencha os campos acima e clique novamente em “Montar a minha resposta”.)';
+ sv.done=true; salvar();
+ const rub=q.rubrica.map(r=>`<tr><td><b>${esc(r[0])}</b></td><td>${esc(r[1])}</td><td style="white-space:nowrap"><label><input type="checkbox"> ok</label></td></tr>`).join('');
+ $('montada').innerHTML=`<div class="box"><h3>🧩 Sua resposta (parte escrita)</h3>
+     <div class="resp-final">${esc(minha)}</div>
+     <p class="tagline">Releia aplicando as 3 passadas: conteúdo → estrutura → língua.</p></div>
+   <div class="box"><h3>📖 Espelho (resposta de referência)</h3>${q.espelho.map(p=>`<p>${esc(p)}</p>`).join('')}</div>
+   <div class="box"><h3>✅ Autoavaliação pela rubrica</h3>
+     <table class="rubrica"><tr><th>Critério</th><th>Você cumpriu?</th><th>✔</th></tr>${rub}</table></div>`;
+ $('montada').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+/* ---------- eventos ---------- */
+document.addEventListener('click',e=>{
+ const h=e.target.closest('[data-home]'); if(h){home();scrollTo(0,0);return}
+ const o=e.target.closest('[data-obj]'); if(o){abrirObj(+o.dataset.obj);scrollTo(0,0);return}
+ const s=e.target.closest('[data-sub]'); if(s){abrirSub(+s.dataset.sub);scrollTo(0,0);return}
+ const stp=e.target.closest('.step[data-step] .sh'); if(stp){const st_=stp.closest('.step');const k=+st_.dataset.step;const q=OBJ[curObj()];const sv=st.obj[q.id];const idx=sv.aberto.indexOf(k);if(idx<0)sv.aberto.push(k);else sv.aberto.splice(idx,1);salvar();st_.classList.toggle('on');return}
+ const alt=e.target.closest('[data-alt]'); if(alt){const i=curObj();const q=OBJ[i];const sv=st.obj[q.id];if(sv.done)return;sv.marcou=alt.dataset.alt;salvar();abrirObj(i);return}
+ const vg=e.target.closest('[data-ver]'); if(vg){verGabaritoObj(curObj());return}
+ const sa=e.target.closest('[data-sugA]'); if(sa){const i=curSub();const q=SUB[i];const sv=st.sub[q.id];const ta=document.querySelector('[data-campo="a"]');ta.value=(ta.value?ta.value+'\n':'')+'• '+sa.dataset.suga;sv.campos.a=ta.value;salvar();return}
+ const mb=e.target.closest('[data-montar]'); if(mb){const i=curSub();coletarSub(i);montarSub(i);return}
+});
+document.addEventListener('input',e=>{const c=e.target.closest('[data-campo]');if(!c)return;
+ const i=curSub();if(i<0)return;const q=SUB[i];st.sub[q.id].campos[c.dataset.campo]=c.value;salvar();});
+function coletarSub(i){const q=SUB[i];document.querySelectorAll('[data-campo]').forEach(c=>{st.sub[q.id].campos[c.dataset.campo]=c.value});salvar();}
+let _curObj=-1,_curSub=-1;
+function curObj(){return _curObj} function curSub(){return _curSub}
+const _abrirObj=abrirObj; abrirObj=function(i){_curObj=i;_curSub=-1;_abrirObj(i)};
+const _abrirSub=abrirSub; abrirSub=function(i){_curSub=i;_curObj=-1;_abrirSub(i)};
+const _home=home; home=function(){_curObj=-1;_curSub=-1;_home()};
+
+$('rodape').innerHTML='Treino autoral com base na aula “Estudo do Erro e Concurso de Crimes” (Prof. Pietro Medeiros) e no e-book de Escrita Universitária. Fundamentos no Código Penal (arts. 20, 21, 69, 70 e 71). Seus textos ficam salvos apenas neste navegador.';
+home();
+</script>
+</body>
+</html>
